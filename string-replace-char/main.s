@@ -1,7 +1,7 @@
 .data
 str:    .asciz "hello world"
-target: .asciz 'o'
-repl:   .asciz 'a'
+target: .byte 0x6F
+repl:   .byte 0x61
 
 .text
 .globl _start
