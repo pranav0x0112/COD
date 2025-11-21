@@ -31,14 +31,12 @@ outer_col:
 # ------------------------------------------
 inner:
     # load mat1[i][k]
-    la x13, mat1                   # base ptr
     mul x14, x20, x19              # i * N
     add x14, x14, x22              # i*N + k
     add x13, x13, x14              # mat1 + (i*N + k)
     lb x15, 0(x13)                 # x15 = mat1[i][k]
 
     # load mat2[k][j]
-    la x13, mat2                   # base ptr
     mul x14, x22, x19              # k * N
     add x14, x14, x21              # k*N + j
     add x13, x13, x14              # mat2 + (k*N + j)
@@ -53,7 +51,6 @@ inner:
     blt x22, x19, inner            # repeat while k < N
 
     # store C[i][j]
-    la x13, mat3
     mul x14, x20, x19              # i * N
     add x14, x14, x21              # i*N + j
     add x13, x13, x14              # &mat3[i][j]
