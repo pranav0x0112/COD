@@ -1,3 +1,6 @@
+// Condition 1 - Upper 3 bits must be 0
+// Condition 2 - Exactly 2 of the lower 5 bits must be 1
+
 .data
 a: .word 0        # store final result
 
